@@ -57,8 +57,6 @@ $event->trigger();
 // Print the page header.
 
 $PAGE->set_url('/mod/multipage/view.php', array('id' => $cm->id));
-$PAGE->set_title(format_string($multipage->name));
-$PAGE->set_heading(format_string($course->fullname));
 
 /*
  * Other things you may want to set - remove if not needed.
@@ -68,15 +66,16 @@ $PAGE->set_heading(format_string($course->fullname));
  */
 
 // Output starts here.
-echo $OUTPUT->header();
+$renderer = $PAGE->get_renderer('mod_multipage');
+echo $renderer->header($multipage->name, $course->fullname);
 
 // Conditions to show the intro can change to look for own settings or whatever.
 if ($multipage->intro) {
-    echo $OUTPUT->box(format_module_intro('multipage', $multipage, $cm->id), 'generalbox mod_introbox', 'multipageintro');
+    echo $renderer->intro($multipage, $cm->id);
 }
 
 // Replace the following lines with your own code.
-echo $OUTPUT->heading('Go Jets Go!');
+//echo $OUTPUT->heading('Go Jets Go!');
 
 // Finish the page.
 echo $OUTPUT->footer();

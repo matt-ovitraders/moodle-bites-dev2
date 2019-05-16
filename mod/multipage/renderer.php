@@ -47,4 +47,15 @@ class mod_multipage_renderer extends plugin_renderer_base {
         return $output;
     }
 
+    /**
+     * Returns the intro for the module
+     * 
+     * @param $multipage the multipage module
+     * @param int the course module id
+     * @return string intro output
+     */
+    public function intro($multipage, $cm_id){
+        return $this->output->box(format_module_intro('multipage', $multipage, $cm_id), 'generalbox mod_introbox', 'multipageintro');
+    }
+
 }
