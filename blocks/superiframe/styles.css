@@ -1,0 +1,13 @@
+.size-buttons{
+    margin:20px 0px;
+}
+
+.size-buttons a{
+    text-decoration: none;
+    padding: 10px;
+    margin:5px;
+    background-color: rgb(65, 65, 65);
+    color:#FFF;
+    border-radius: 10px;
+    border-radius:10px;
+}
